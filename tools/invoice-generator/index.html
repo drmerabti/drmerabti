@@ -15,21 +15,10 @@
     <span class="brand-mark">IG</span>
     <span class="brand-name" data-i18n="appTitle">Invoice Generator</span>
   </div>
-  <div class="topbar-right">
-    <div class="lang-switch" role="group" aria-label="Language switcher">
-      <button type="button" class="lang-btn" data-lang="ar">العربية</button>
-      <button type="button" class="lang-btn active" data-lang="en">English</button>
-      <button type="button" class="lang-btn" data-lang="fr">Français</button>
-    </div>
-    <select id="currencySelect" class="currency-select" aria-label="Currency"></select>
-    <div class="social-links">
-      <a href="https://facebook.com/drmerabti" target="_blank" rel="noopener noreferrer" class="social-link social-facebook" aria-label="Facebook">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.91h-2.34V22c4.78-.79 8.44-4.94 8.44-9.94z"/></svg>
-      </a>
-      <a href="https://youtube.com/mrmerabti" target="_blank" rel="noopener noreferrer" class="social-link social-youtube" aria-label="YouTube">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.4 3.5 12 3.5 12 3.5s-7.4 0-9.4.6A3 3 0 0 0 .5 6.2 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c2 .6 9.4.6 9.4.6s7.4 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.8zM9.6 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>
-      </a>
-    </div>
+  <div class="lang-switch" role="group" aria-label="Language switcher">
+    <button type="button" class="lang-btn" data-lang="ar">العربية</button>
+    <button type="button" class="lang-btn active" data-lang="en">English</button>
+    <button type="button" class="lang-btn" data-lang="fr">Français</button>
   </div>
 </div>
 
@@ -68,24 +57,6 @@
       <div class="field">
         <label class="field-label" data-i18n="customer">Customer</label>
         <input type="text" id="customerName" class="input" data-i18n-placeholder="customerPlaceholder" placeholder="Customer name">
-      </div>
-
-      <div class="field-group-title" data-i18n="companyInfo">Company Info (optional)</div>
-      <div class="field-stack">
-        <div class="field">
-          <label class="field-label" data-i18n="companyAddress">Address</label>
-          <input type="text" id="companyAddress" class="input" data-i18n-placeholder="companyAddressPlaceholder" placeholder="Company address">
-        </div>
-        <div class="field-row">
-          <div class="field">
-            <label class="field-label" data-i18n="companyPhone">Phone</label>
-            <input type="text" id="companyPhone" class="input" data-i18n-placeholder="companyPhonePlaceholder" placeholder="Phone number">
-          </div>
-          <div class="field">
-            <label class="field-label" data-i18n="companyEmail">Email</label>
-            <input type="email" id="companyEmail" class="input" data-i18n-placeholder="companyEmailPlaceholder" placeholder="Email address">
-          </div>
-        </div>
       </div>
     </div>
 
@@ -153,15 +124,8 @@
     </div>
 
     <div class="actions-row">
-      <button type="button" class="btn btn-pdf" id="generatePdfBtn" data-i18n="generatePdf">Generate PDF</button>
-      <div class="btn-icon-pair">
-        <button type="button" class="btn btn-icon btn-excel" id="downloadExcelBtn" data-i18n-title="downloadExcel" title="Download Excel" aria-label="Download Excel">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 8l8 8M16 8l-8 8"/></svg>
-        </button>
-        <button type="button" class="btn btn-icon btn-word" id="downloadWordBtn" data-i18n-title="downloadWord" title="Download Word" aria-label="Download Word">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13l1.5 6L11 14l1.5 5L14 13"/></svg>
-        </button>
-      </div>
+      <button type="button" class="btn btn-primary" id="generatePdfBtn" data-i18n="generatePdf">Generate PDF</button>
+      <button type="button" class="btn btn-secondary" id="printBtn" data-i18n="print">Print</button>
       <button type="button" class="btn btn-secondary" id="clearBtn" data-i18n="clear">Clear</button>
     </div>
   </section>
@@ -174,16 +138,9 @@
       <div class="invoice-sheet" id="invoiceSheet">
 
         <div class="inv-header">
-          <div class="inv-header-left">
-            <div class="inv-logo-wrap">
-              <img id="previewLogo" class="inv-logo" hidden alt="Company logo">
-              <div class="inv-logo-placeholder" id="previewLogoPlaceholder" data-i18n="companyLogo">COMPANY</div>
-            </div>
-            <div class="inv-company-info" id="previewCompanyInfo" hidden>
-              <div class="inv-company-line" id="previewCompanyAddress" hidden></div>
-              <div class="inv-company-line" id="previewCompanyPhone" hidden></div>
-              <div class="inv-company-line" id="previewCompanyEmail" hidden></div>
-            </div>
+          <div class="inv-logo-wrap">
+            <img id="previewLogo" class="inv-logo" hidden alt="Company logo">
+            <div class="inv-logo-placeholder" id="previewLogoPlaceholder" data-i18n="companyLogo">COMPANY</div>
           </div>
           <div class="inv-meta">
             <div class="inv-meta-row">
@@ -255,43 +212,8 @@
   </div>
 </div>
 
-<div class="confirm-overlay" id="emptyInvoiceOverlay" hidden>
-  <div class="confirm-box">
-    <p data-i18n="emptyInvoiceMsg">This invoice looks empty. Generate the PDF anyway?</p>
-    <div class="confirm-actions">
-      <button type="button" class="btn btn-secondary" id="emptyInvoiceCancel" data-i18n="cancel">Cancel</button>
-      <button type="button" class="btn btn-primary" id="emptyInvoiceOk" data-i18n="confirmGenerate">Generate</button>
-    </div>
-  </div>
-</div>
-
-<div class="confirm-overlay" id="addCurrencyOverlay" hidden>
-  <div class="confirm-box">
-    <p data-i18n="addCurrencyTitle">Add a Custom Currency</p>
-    <div class="field">
-      <label class="field-label" data-i18n="currencySymbolLabel">Symbol</label>
-      <input type="text" id="newCurrencySymbol" class="input" maxlength="6">
-    </div>
-    <div class="field">
-      <label class="field-label" data-i18n="currencyMainLabel">Currency name (e.g. Pounds)</label>
-      <input type="text" id="newCurrencyMain" class="input">
-    </div>
-    <div class="field">
-      <label class="field-label" data-i18n="currencySubLabel">Sub-unit name (e.g. Pence)</label>
-      <input type="text" id="newCurrencySub" class="input">
-    </div>
-    <div class="confirm-actions">
-      <button type="button" class="btn btn-secondary" id="addCurrencyCancel" data-i18n="cancel">Cancel</button>
-      <button type="button" class="btn btn-primary" id="addCurrencySave" data-i18n="save">Save</button>
-    </div>
-  </div>
-</div>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/docx/8.5.0/index.umd.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
 <script src="i18n.js"></script>
 <script src="numToWords.js"></script>
 <script src="script.js"></script>
