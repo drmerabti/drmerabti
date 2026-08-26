@@ -54,6 +54,9 @@ const CONTENT = {
     { id: 'tool-text-to-numbers', title_ar: 'تحويل الحروف إلى أرقام', title_en: 'Text to Numbers',
       desc_ar: 'حوّل أي نص إلى أرقام حسب موضع كل حرف في الأبجدية.', desc_en: 'Convert any text into numbers based on letter position.',
       url: 'tools/text-to-numbers/' },
+         { id: 'tool-invoice-generator', title_ar: 'مولّد الفواتير', title_en: 'Invoice Generator',
+      desc_ar: 'أنشئ فاتورة احترافية مع معاينة مباشرة وتصدير PDF.', desc_en: 'Create a professional invoice with live preview and PDF export.',
+      url: 'tools/invoice-generator/' },
     // لإضافة أداة جديدة أضف سطرًا هنا بنفس الشكل:
     // { id:'tool-distance', title_ar:'حساب المسافة بين منطقتين', title_en:'Distance Calculator',
     //   desc_ar:'احسب المسافة بين نقطتين جغرافيتين بسهولة.', desc_en:'Calculate distance between two locations.',
